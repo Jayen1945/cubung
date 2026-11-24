@@ -1,0 +1,878 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Batam | Explore The Beauty</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue: #087e9e;
+    --dark: #102c3a;
+    --light: #f4f9fb;
+    --gray: #687b85;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* NAVBAR */
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #56d6ed;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #56d6ed;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 720px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    background:
+    linear-gradient(90deg, rgba(4,27,42,.85), rgba(4,27,42,.25)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding-top: 60px;
+}
+
+.hero-content small {
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #69d9ec;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.1;
+    margin: 22px 0;
+}
+
+.hero p {
+    max-width: 550px;
+    color: #e0ebef;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: #16a6c5;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    background: #087e9e;
+    transform: translateY(-3px);
+}
+
+/* GENERAL */
+
+section {
+    padding: 100px 10%;
+}
+
+.section-label {
+    color: var(--blue);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 46px);
+    margin: 15px 0;
+}
+
+.section-desc {
+    color: var(--gray);
+    line-height: 1.9;
+    max-width: 650px;
+    font-size: 15px;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-image img {
+    height: 470px;
+    border-radius: 10px;
+}
+
+.about-text p {
+    color: var(--gray);
+    line-height: 2;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.about-info {
+    display: flex;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.info h3 {
+    font-size: 28px;
+    color: var(--blue);
+}
+
+.info span {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+/* DESTINATION */
+
+.destination {
+    background: var(--light);
+}
+
+.destination-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.destination-heading .section-desc {
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .35s;
+    box-shadow: 0 8px 30px rgba(0,0,0,.04);
+}
+
+.card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+.card img {
+    height: 240px;
+    transition: .4s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* HIGHLIGHT */
+
+.highlight {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background:
+    linear-gradient(rgba(5,35,49,.7),rgba(5,35,49,.7)),
+    url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.highlight-content {
+    max-width: 750px;
+}
+
+.highlight h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 55px);
+    margin: 18px 0;
+}
+
+.highlight p {
+    line-height: 1.9;
+    color: #e3eef2;
+}
+
+/* CULTURE */
+
+.culture {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.culture img {
+    height: 430px;
+    border-radius: 10px;
+}
+
+.culture-list {
+    margin-top: 25px;
+}
+
+.culture-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e4ebef;
+}
+
+.culture-item h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.culture-item p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* GALLERY */
+
+.gallery {
+    background: var(--light);
+}
+
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 15px;
+}
+
+.gallery-grid img {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.gallery-grid .large {
+    grid-row: span 2;
+}
+
+/* FOOTER */
+
+footer {
+    background: #102c3a;
+    color: white;
+    padding: 65px 10% 25px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-about {
+    max-width: 380px;
+}
+
+footer h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer h2 span {
+    color: #56d6ed;
+}
+
+footer p {
+    color: #b5c6ce;
+    line-height: 1.9;
+    font-size: 13px;
+}
+
+.footer-links h3 {
+    margin-bottom: 18px;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 12px;
+    color: #b5c6ce;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #56d6ed;
+}
+
+.copyright {
+    border-top: 1px solid #31505e;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    header {
+        padding: 22px 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .about,
+    .culture {
+        gap: 35px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 0 7%;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+    }
+
+    .about,
+    .culture {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img,
+    .culture img {
+        height: 300px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 150px 150px;
+    }
+
+    .gallery-grid .large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <a href="#home" class="logo">TENTANG<span>BATAM.</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#wisata">Wisata</a>
+        <a href="#budaya">Budaya</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <small>WELCOME TO BATAM</small>
+
+        <h1>Discover The Beauty Of Batam</h1>
+
+        <p>
+            Jelajahi pesona Kota Batam, sebuah kota kepulauan
+            yang memadukan keindahan alam, kekayaan budaya,
+            dan perkembangan modern di Kepulauan Riau.
+        </p>
+
+        <a href="#about" class="hero-btn">Explore Batam →</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85"
+        alt="Keindahan laut">
+    </div>
+
+    <div class="about-text">
+        <span class="section-label">ABOUT BATAM</span>
+
+        <h2 class="section-title">
+            Mengenal Lebih Dekat Kota Batam
+        </h2>
+
+        <p>
+            Batam merupakan salah satu kota terbesar di Provinsi
+            Kepulauan Riau, Indonesia. Letaknya sangat strategis
+            karena berada dekat dengan Singapura dan Malaysia.
+        </p>
+
+        <p>
+            Batam dikenal sebagai pusat industri, perdagangan,
+            dan pariwisata. Selain menjadi kota modern, Batam juga
+            memiliki pantai indah, pulau-pulau eksotis, serta
+            budaya Melayu yang masih terjaga.
+        </p>
+
+        <div class="about-info">
+            <div class="info">
+                <h3>1971</h3>
+                <span>Awal pengembangan Batam</span>
+            </div>
+
+            <div class="info">
+                <h3>Kepri</h3>
+                <span>Provinsi Kepulauan Riau</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DESTINATION -->
+<section class="destination" id="wisata">
+
+    <div class="destination-heading">
+        <span class="section-label">EXPLORE DESTINATION</span>
+
+        <h2 class="section-title">
+            Destinasi Wisata Batam
+        </h2>
+
+        <p class="section-desc">
+            Temukan berbagai tempat menarik yang membuat
+            Batam menjadi salah satu tujuan wisata favorit.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=85"
+            alt="Pantai Nongsa">
+            <div class="card-content">
+                <h3>Pantai Nongsa</h3>
+                <p>
+                    Pantai dengan pemandangan laut yang indah.
+                    Pengunjung dapat menikmati suasana santai
+                    dan panorama matahari terbenam.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+            alt="Jembatan Barelang">
+            <div class="card-content">
+                <h3>Jembatan Barelang</h3>
+                <p>
+                    Ikon Kota Batam yang menghubungkan beberapa
+                    pulau dan menjadi salah satu tempat favorit
+                    untuk menikmati pemandangan.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=85"
+            alt="Pulau Abang">
+            <div class="card-content">
+                <h3>Pulau Abang</h3>
+                <p>
+                    Pulau dengan air laut jernih dan keindahan
+                    bawah laut yang menarik untuk dijelajahi.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=800&q=85"
+            alt="Ocarina Batam">
+            <div class="card-content">
+                <h3>Ocarina Batam</h3>
+                <p>
+                    Kawasan rekreasi yang menawarkan berbagai
+                    pilihan hiburan dan aktivitas keluarga.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=85"
+            alt="Pantai Viovio">
+            <div class="card-content">
+                <h3>Pantai Viovio</h3>
+                <p>
+                    Salah satu destinasi pantai di kawasan
+                    Galang dengan suasana alam yang menarik.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=85"
+            alt="Pulau Putri">
+            <div class="card-content">
+                <h3>Pulau Putri</h3>
+                <p>
+                    Destinasi wisata bahari yang menawarkan
+                    pemandangan laut dan suasana pulau tropis.
+                </p>
+            </div>
+        </div>
+
+        <!-- TAMBAHAN DESTINASI -->
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=85"
+            alt="Masjid Sultan Mahmud Riayat Syah">
+            <div class="card-content">
+                <h3>Masjid Sultan Mahmud Riayat Syah</h3>
+                <p>
+                    Masjid megah di kawasan Tanjung Uncang,
+                    Batam, yang menjadi salah satu ikon wisata
+                    religi dan kebanggaan masyarakat Batam.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=85"
+            alt="Welcome to Batam">
+            <div class="card-content">
+                <h3>Welcome to Batam</h3>
+                <p>
+                    Landmark ikonik yang menjadi salah satu
+                    tempat favorit pengunjung untuk berfoto
+                    dengan latar tulisan Welcome to Batam.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=85"
+            alt="Jembatan dan pemandangan">
+            <div class="card-content">
+                <h3>Pesona Kepulauan Batam</h3>
+                <p>
+                    Nikmati keindahan kawasan kepulauan
+                    yang menjadi bagian dari pesona
+                    alam Kota Batam.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=85"
+            alt="Kota">
+            <div class="card-content">
+                <h3>Kota Modern Batam</h3>
+                <p>
+                    Kota yang berkembang sebagai pusat
+                    industri, perdagangan, dan pariwisata
+                    di Kepulauan Riau.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section class="highlight">
+    <div class="highlight-content">
+        <span class="section-label">THE BEAUTY OF BATAM</span>
+
+        <h2>More Than Just A City</h2>
+
+        <p>
+            Batam bukan hanya kota industri dan perdagangan.
+            Di balik perkembangan kotanya, terdapat keindahan
+            alam, budaya, dan keramahan masyarakat yang
+            menjadikan Batam istimewa.
+        </p>
+    </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture" id="budaya">
+
+    <div>
+        <span class="section-label">CULTURE & CULINARY</span>
+
+        <h2 class="section-title">
+            Budaya dan Kuliner Khas Batam
+        </h2>
+
+        <p class="section-desc">
+            Batam memiliki kekayaan budaya Melayu dan
+            beragam kuliner khas yang menjadi bagian
+            dari identitas masyarakatnya.
+        </p>
+
+        <div class="culture-list">
+
+            <div class="culture-item">
+                <h3>Budaya Melayu</h3>
+                <p>
+                    Budaya Melayu menjadi salah satu identitas
+                    penting masyarakat Kepulauan Riau.
+                </p>
+            </div>
+
+            <div class="culture-item">
+                <h3>Gonggong</h3>
+                <p>
+                    Hidangan laut khas Kepulauan Riau berupa
+                    siput laut yang biasanya direbus dan
+                    disajikan dengan saus.
+                </p>
+            </div>
+
+            <div class="culture-item">
+                <h3>Otak-Otak</h3>
+                <p>
+                    Makanan berbahan dasar ikan yang dibungkus
+                    dengan daun dan dipanggang.
+                </p>
+            </div>
+
+            <div class="culture-item">
+                <h3>Teh Tarik</h3>
+                <p>
+                    Minuman populer yang memiliki cita rasa
+                    manis dan tekstur berbusa.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+        alt="Kuliner">
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <div class="gallery-heading">
+        <span class="section-label">BATAM GALLERY</span>
+
+        <h2 class="section-title">
+            Pesona Kota Batam
+        </h2>
+
+        <p class="section-desc">
+            Beberapa gambaran keindahan alam dan suasana
+            destinasi wisata tropis.
+        </p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img class="large"
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+        alt="Pantai tropis">
+
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=85"
+        alt="Laut">
+
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=700&q=85"
+        alt="Ombak laut">
+
+        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=85"
+        alt="Pantai">
+
+        <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=700&q=85"
+        alt="Resort">
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-about">
+            <h2>TENTANG<span>BATAM.</span></h2>
+
+            <p>
+                Mengenal lebih dekat keindahan, budaya,
+                sejarah, dan pesona wisata Kota Batam,
+                Kepulauan Riau, Indonesia.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#about">Tentang Batam</a>
+            <a href="#wisata">Destinasi Wisata</a>
+            <a href="#budaya">Budaya</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <a href="#wisata">Pantai</a>
+            <a href="#wisata">Pulau</a>
+            <a href="#budaya">Kuliner</a>
+            <a href="#budaya">Budaya Melayu</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © 2026 Tentang Batam. Dibuat untuk memperkenalkan
+            keindahan Kota Batam, Indonesia.
+        </p>
+    </div>
+
+</footer>
+
+</body>
+</html>
